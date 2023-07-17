@@ -1,0 +1,32 @@
+{
+    "name": "sunil",
+    "job": "leader",
+    "hobby":"cricket",
+    "age": 20,
+    "properties":[
+		
+		{
+			
+		"type" : "String",	
+	    "name" :"firstname",
+		"value"	:"suraj"
+		},
+		{
+		"type" : "String",	
+	    "name" :"firstname",
+		"value"	:"roshan"				
+		},
+		{
+		"type" : "String",	
+	    "name" :"firstname",
+		"value"	:"rohit"
+		}
+		
+		
+	]
+    
+    
+    
+    
+   } 
+  

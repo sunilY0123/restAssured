@@ -1,0 +1,1128 @@
+{
+	"info": {
+		"_postman_id": "75f8d642-b0dc-4536-9a21-372516882ae7",
+		"name": "Agile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19059477",
+		"_collection_link": "https://interstellar-resonance-860661.postman.co/workspace/c7414d8d-089a-4240-a087-f1bd0174a48b/collection/19059477-75f8d642-b0dc-4536-9a21-372516882ae7?action=share&creator=19059477&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Get Request's",
+			"item": [
+				{
+					"name": "Listing contacts",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "03JNPHGS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "roshan.yadav@expertviewautomation.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/contacts?page_size=2",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"contacts"
+							],
+							"query": [
+								{
+									"key": "cursor",
+									"value": "E-ABAIICNGoRc35hZ2lsZS1jcm0tY2xvdWRyFAsSB0NvbnRhY3QYgICAgKLThAoMogEIcHJhYmF0aGuIAgAU",
+									"disabled": true
+								},
+								{
+									"key": "page_size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get contact by ID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "03JNPHGS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "roshan.yadav@expertviewautomation.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/contacts/{{contact_id}}",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"contacts",
+								"{{contact_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search contact by email",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{email}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{apikey}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/contacts/search/email/{email}",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"contacts",
+								"search",
+								"email",
+								"{email}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get tasks related to contact",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{email}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{apikey}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/contacts/{contact_id}/tasks/sort",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"contacts",
+								"{contact_id}",
+								"tasks",
+								"sort"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get deals related to specific contact",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{email}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{domain}.agilecrm.com/dev/api/contacts/{contact_id}/deals",
+							"protocol": "https",
+							"host": [
+								"{domain}",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"contacts",
+								"{contact_id}",
+								"deals"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post Request's",
+			"item": [
+				{
+					"name": "Creating a contact",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Virat@18#",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "roshan.yadav@wuuvo.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"star_value\": \"4\",\r\n    \"lead_score\": \"92\",\r\n    \"tags\": [\r\n        \"Lead\",\r\n        \"Likely Buyer\"\r\n    ],\r\n    \"properties\": [\r\n        {\r\n            \"type\": \"SYSTEM\",\r\n            \"name\": \"first_name\",\r\n            \"value\": \"Samson\"\r\n        },\r\n        {\r\n            \"type\": \"SYSTEM\",\r\n            \"name\": \"last_name\",\r\n            \"value\": \"Nolan\"\r\n        },\r\n        {\r\n            \"type\": \"SYSTEM\",\r\n            \"name\": \"email\",\r\n            \"subtype\": \"work\",\r\n            \"value\": \"roshan.yadav12@walt1.ltd\"\r\n        },\r\n        {\r\n            \"type\": \"SYSTEM\",\r\n            \"name\": \"address\",\r\n            \"value\": \"{\\\"address\\\":\\\"225 George Street\\\",\\\"city\\\":\\\"NSW\\\",\\\"state\\\":\\\"Sydney\\\",\\\"zip\\\":\\\"2000\\\",\\\"country\\\":\\\"Australia\\\"}\"\r\n        },\r\n        {\r\n            \"name\": \"phone\",\r\n            \"value\": \"8888888889\",\r\n            \"subtype\": \"work\"\r\n        },\r\n        {\r\n            \"name\": \"phone\",\r\n            \"value\": \"8888888889\",\r\n            \"subtype\": \"home\"\r\n        },\r\n        {\r\n            \"name\": \"website\",\r\n            \"value\": \"www.youtube.com\",\r\n            \"subtype\": \"YOUTUBE\"\r\n        },\r\n        {\r\n            \"name\": \"website\",\r\n            \"value\": \"www.linkedin.com\",\r\n            \"subtype\": \"LINKEDIN\"\r\n        },\r\n        {\r\n            \"name\": \"website\",\r\n            \"value\": \"www.mywebsite.com\",\r\n            \"subtype\": \"URL\"\r\n        },\r\n        {\r\n            \"name\": \"My custom field of type text\",\r\n            \"type\": \"CUSTOM\",\r\n            \"value\": \"My name is ghanshyam\"\r\n        },\r\n        {\r\n            \"name\": \"My custom field of type date\",\r\n            \"type\": \"CUSTOM\",\r\n            \"value\": 1479580200\r\n        },\r\n        {\r\n            \"name\": \"My custom field of type checkbox\",\r\n            \"type\": \"CUSTOM\",\r\n            \"value\": \"on\"\r\n        },\r\n        {\r\n            \"name\": \"My custom field of type list\",\r\n            \"type\": \"CUSTOM\",\r\n            \"value\": \"lemon\"\r\n        },\r\n        {\r\n            \"name\": \"My custom field of type companies\",\r\n            \"type\": \"CUSTOM\",\r\n            \"value\": \"[\\\"5767466600890368\\\",\\\"5114076984246272\\\",\\\"5746725247516672\\\"]\"\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/contacts",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Ticket",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sample@agilecrm.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requester_name\": \"Roshan\",\r\n    \"requester_email\": \"roshan@yopmail.com\",\r\n    \"subject\": \"Test not working ??\",\r\n    \"priority\": \"LOW\",\r\n    \"status\": \"OPEN\",\r\n    \"groupID\": \"5756098678095872\",\r\n    \"html_text\": \"Hello I am testing your docs and find that Test is not working. Please help me\",\r\n    \"cc_emails\": [\r\n        \"roshan@gmail.com\"\r\n    ],\r\n    \"labels\": null\r\n}"
+						},
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/tickets/new-ticket",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"tickets",
+								"new-ticket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create deal to a contact using email ID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "ghanshyam.raut@agilecrm.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Deal-Tomato\",\r\n    \"expected_value\": \"500\",\r\n    \"probability\": \"75\",\r\n    \"close_date\": 1455042600,\r\n    \"milestone\": \"Proposal\",\r\n    \"custom_data\": [\r\n        {\r\n            \"name\": \"Group Size\",\r\n            \"value\": \"10\"\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/opportunity/email/samson@walt.ltd",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"opportunity",
+								"email",
+								"samson@walt.ltd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding tags to a contact based on email",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sample@agilecrm.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "samson@walt.ltd",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "[\"testingtesto\"]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/contacts/email/tags/add",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"contacts",
+								"email",
+								"tags",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a note and relate that to contacts",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{email}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \" Note subject\",\r\n    \"description\": \"Note description\",\r\n    \"contact_ids\": [\r\n        \"5688267051630592\",\r\n        \"5721389839417344\"\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/notes/",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"notes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a task based on contact email",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "ghanshyam.raut@agilecrm.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"Need to contact1\",\r\n    \"type\": \"EMAIL\",\r\n    \"due\": 1456986600,\r\n    \"task_ending_time\": \"12:00\",\r\n    \"priority_type\": \"HIGH\",\r\n    \"status\": \"YET_TO_START\"\r\n}"
+						},
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/tasks/email/samson@walt.ltd",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"tasks",
+								"email",
+								"samson@walt.ltd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create event",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Virat@18#",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "roshan.yadav@ezztt.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Today Test event\",\r\n    \"allDay\": true,\r\n    \"color\": \"red\",\r\n    \"start\": 1409682600,\r\n    \"end\": 1409768100,\r\n    \"contacts\": [\r\n        \"721001\",\r\n        \"722001\"\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/events",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Deal",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "ghanshyam.raut@agilecrm.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Deal-Tomato\",\r\n    \"expected_value\": \"500\",\r\n    \"probability\": \"75\",\r\n    \"close_date\": 1455042600,\r\n    \"milestone\": \"Proposal\",\r\n    \"contact_ids\": [\r\n        \"5694691248963584\"\r\n    ],\r\n    \"custom_data\": [\r\n        {\r\n            \"name\": \"Group Size\",\r\n            \"value\": \"10\"\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/opportunity",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"opportunity"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Put Request's",
+			"item": [
+				{
+					"name": "Update lead score by ID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sample@agilecrm.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"5725836472745984\",\r\n    \"lead_score\": 150\r\n}"
+						},
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/contacts/edit/lead-score",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"contacts",
+								"edit",
+								"lead-score"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update properties of a contact by ID (partial update)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sample@agilecrm.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"5676477903273984\",\r\n    \"properties\": [\r\n        {\r\n            \"type\": \"SYSTEM\",\r\n            \"name\": \"first_name\",\r\n            \"value\": \"Roshan\"\r\n        },\r\n        {\r\n            \"type\": \"SYSTEM\",\r\n            \"name\": \"last_name\",\r\n            \"value\": \"Ahir\"\r\n        },\r\n        {\r\n            \"type\": \"SYSTEM\",\r\n            \"name\": \"email\",\r\n            \"subtype\": \"work\",\r\n            \"value\": \"samson@walt.ltd\"\r\n        },\r\n        {\r\n            \"type\": \"SYSTEM\",\r\n            \"name\": \"address\",\r\n            \"value\": \"{\\\"address\\\":\\\"225 George Street\\\",\\\"city\\\":\\\"NSW\\\",\\\"state\\\":\\\"Sydney\\\",\\\"zip\\\":\\\"2000\\\",\\\"country\\\":\\\"Australia\\\"}\"\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/contacts/edit-properties",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"contacts",
+								"edit-properties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update star value by ID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sample@agilecrm.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"5725836472745984\",\r\n    \"star_value\": 2\r\n}"
+						},
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/contacts/edit/add-star",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"contacts",
+								"edit",
+								"add-star"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update tags value by ID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sample@agilecrm.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"5725836472745984\",\r\n    \"tags\": [\r\n        \"test1\",\r\n        \"test2\"\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/contacts/edit/tags",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"contacts",
+								"edit",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete Request's",
+			"item": [
+				{
+					"name": "Delete single contact",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{email}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{apikey}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/contacts/{id}",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"contacts",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Deal",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "test@example.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "4uet78u6atfn38m9dounnq9g4u",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/opportunity/{id}",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"opportunity",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a specific note from specific contact",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{email}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://expertviewautomation.agilecrm.com/dev/api/contacts/{contact_id}/notes/{note_id}",
+							"protocol": "https",
+							"host": [
+								"expertviewautomation",
+								"agilecrm",
+								"com"
+							],
+							"path": [
+								"dev",
+								"api",
+								"contacts",
+								"{contact_id}",
+								"notes",
+								"{note_id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a task based on ID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{email}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{API",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https:expertviewautomation.agilecrm.com/dev/api/tasks/5149503652888576",
+							"host": [
+								"https"
+							],
+							"port": "expertviewautomation.agilecrm.com",
+							"path": [
+								"dev",
+								"api",
+								"tasks",
+								"5149503652888576"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an event",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{email}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{API",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https:expertviewautomation.agilecrm.com/dev/api/events/5149503652888576",
+							"host": [
+								"https"
+							],
+							"port": "expertviewautomation.agilecrm.com",
+							"path": [
+								"dev",
+								"api",
+								"events",
+								"5149503652888576"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "page_size",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "contact_id",
+			"value": "6529203748274170",
+			"type": "string"
+		}
+	]
+}
